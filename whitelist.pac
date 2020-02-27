@@ -4,10 +4,10 @@ var okToLoadBalance = false;
 
 var proxy = [
     // add more proxies to load-balance!
-    "SOCKS5 127.0.0.1:1086; SOCKS 127.0.0.1:1086;",
-    "SOCKS5 127.0.0.1:1081; SOCKS 127.0.0.1:1081;",
-    "SOCKS5 127.0.0.1:1082; SOCKS 127.0.0.1:1082;",
-    "SOCKS5 127.0.0.1:1083; SOCKS 127.0.0.1:1083;"
+    "SOCKS5 127.0.0.1:1086; SOCKS 127.0.0.1:1086",
+    "SOCKS5 127.0.0.1:1081; SOCKS 127.0.0.1:1081",
+    "SOCKS5 127.0.0.1:1082; SOCKS 127.0.0.1:1082",
+    "SOCKS5 127.0.0.1:1083; SOCKS 127.0.0.1:1083"
 ];
 
 var direct = "DIRECT";
@@ -63418,6 +63418,7 @@ var white_domains = {
 "www.agoda.com":1,
 "www.akamai.com":1,
 "www.amd.com":1,
+"www.bing.com":1,
 "www.cc":1,
 "www.cg":1,
 "www.com.my":1,
