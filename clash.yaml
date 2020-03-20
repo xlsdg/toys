@@ -151,20 +151,34 @@ dns:
     ipcidr: # 在这个网段内的 IP 地址会被考虑为被污染的 IP
       - 240.0.0.0/4
 
-Proxy Group:
+proxies:
+  - name: "ss"
+    type: ss
+    server: server
+    port: 443
+    cipher: xchacha20-ietf-poly1305
+    password: "password"
+
+proxy-groups:
   # url-test 可以自动选择与指定 URL 测速后，延迟最短的服务器
   - name: url-test
     type: url-test
+    proxies:
+      - ss
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   # fallback 可以尽量按照用户书写的服务器顺序，在确保服务器可用的情况下，自动选择服务器
   - name: fallback
     type: fallback
+    proxies:
+      - ss
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   # load-balance 可以使相同 eTLD 请求在同一条代理线路上
   - name: load-balance
     type: load-balance
+    proxies:
+      - ss
     url: "http://www.gstatic.com/generate_204"
     interval: 300
   # select 用来允许用户手动选择 代理服务器 或 服务器组
@@ -175,3 +189,19 @@ Proxy Group:
       - url-test
       - fallback
       - load-balance
+
+rules:
+  - DOMAIN-SUFFIX,google.com,auto
+  - DOMAIN-KEYWORD,google,auto
+  - DOMAIN,google.com,auto
+  - DOMAIN-SUFFIX,ad.com,REJECT
+  # rename SOURCE-IP-CIDR and would remove after prerelease
+  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
+  # optional param "no-resolve" for IP rules (GEOIP IP-CIDR)
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - GEOIP,CN,DIRECT
+  - DST-PORT,80,DIRECT
+  - SRC-PORT,7777,DIRECT
+  # FINAL would remove after prerelease
+  # you also can use `FINAL,Proxy` or `FINAL,,Proxy` now
+  - MATCH,auto
