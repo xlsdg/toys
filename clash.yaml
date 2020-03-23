@@ -97,12 +97,6 @@ dns:
     - "tls://223.5.5.5:853" # Alibaba
     - "tls://223.6.6.6:853" # Alibaba
   fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
-    - "8.8.8.8:53" # Google
-    - "8.8.4.4:53" # Google
-    - "1.1.1.1:53" # Cloudflare
-    - "1.0.0.1:53" # Cloudflare
-    - "208.67.222.222:53" # OpenDNS
-    - "208.67.220.220:53" # OpenDNS
     #- "https://dns.alidns.com/dns-query"  # Alibaba
     #- "https://doh.360.cn/dns-query"  # 360
     #- "https://dns.google/dns-query"  # Google
