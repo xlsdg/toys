@@ -67,8 +67,8 @@ dns:
     #- "199.85.127.10:53"  # Norton DNS
     #- "156.154.70.5:53"  # Neustar DNS
     #- "156.154.71.5:53"  # Neustar DNS
-    - "9.9.9.9:53" # Quad9 DNS
-    - "149.112.112.112:53" # Quad9 DNS
+    #- "9.9.9.9:53" # Quad9 DNS
+    #- "149.112.112.112:53" # Quad9 DNS
     #- "195.46.39.39:53"  # SafeDNS DNS
     #- "195.46.39.40:53"  # SafeDNS DNS
   enhanced-mode: redir-host # 或 fake-ip
@@ -94,8 +94,8 @@ dns:
     - "101.226.4.6:53" # DNS PAI
     - "218.30.118.6:53" # DNS PAI
     - "https://i.233py.com/dns-query" # GeekDNS
-    - "tls://223.5.5.5:853" # Alibaba
-    - "tls://223.6.6.6:853" # Alibaba
+    #- "tls://223.5.5.5:853" # Alibaba
+    #- "tls://223.6.6.6:853" # Alibaba
   fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
     #- "https://dns.alidns.com/dns-query"  # Alibaba
     #- "https://doh.360.cn/dns-query"  # 360
