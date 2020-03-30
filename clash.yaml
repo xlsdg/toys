@@ -185,17 +185,16 @@ proxy-groups:
       - load-balance
 
 rules:
-  - DOMAIN-SUFFIX,google.com,auto
-  - DOMAIN-KEYWORD,google,auto
-  - DOMAIN,google.com,auto
-  - DOMAIN-SUFFIX,ad.com,REJECT
-  # rename SOURCE-IP-CIDR and would remove after prerelease
-  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
-  # optional param "no-resolve" for IP rules (GEOIP IP-CIDR)
+  - DOMAIN-SUFFIX,local,DIRECT
+  - IP-CIDR,0.0.0.0/8,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
   - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.0.0.0/24,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,198.18.0.0/15,DIRECT
+  #- IP-CIDR6,::/128,DIRECT
+  #- IP-CIDR6,::1/128,DIRECT
   - GEOIP,CN,DIRECT
-  - DST-PORT,80,DIRECT
-  - SRC-PORT,7777,DIRECT
-  # FINAL would remove after prerelease
-  # you also can use `FINAL,Proxy` or `FINAL,,Proxy` now
-  - MATCH,auto
+  - MATCH,Proxy
