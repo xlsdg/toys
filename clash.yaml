@@ -99,7 +99,7 @@ dns:
   fallback: # 与 nameserver 内的服务器列表同时发起请求，当规则符合 GEOIP 在 CN 以外时，fallback 列表内的域名服务器生效。
     #- "https://dns.alidns.com/dns-query"  # Alibaba
     #- "https://doh.360.cn/dns-query"  # 360
-    #- "https://dns.google/dns-query"  # Google
+    - "https://dns.google/dns-query" # Google
     #- "https://doh.opendns.com/dns-query"  # OpenDNS
     - "https://cloudflare-dns.com/dns-query" # Cloudflare
     #- "https://dns.quad9.net/dns-query"  # Quad9
@@ -111,8 +111,8 @@ dns:
     - "tls://8.8.4.4:853" # Google
     #- "tls://208.67.222.222:853"  # OpenDNS
     #- "tls://208.67.220.220:853"  # OpenDNS
-    #- "tls://1.1.1.1:853"  # Cloudflare
-    #- "tls://1.0.0.1:853"  # Cloudflare
+    - "tls://1.1.1.1:853" # Cloudflare
+    - "tls://1.0.0.1:853" # Cloudflare
     #- "tls://9.9.9.9:853"  # Quad9
     #- "tls://149.112.112.112:853"  # Quad9
     #- "tls://185.222.222.222:853"  # DNS.SB
