@@ -70,7 +70,7 @@ dns:
     #- "195.46.39.39:53"  # SafeDNS DNS
     #- "195.46.39.40:53"  # SafeDNS DNS
   enhanced-mode: redir-host # or fake-ip
-  # fake-ip-range: 198.18.0.1/16 # if you don't know what it is, don't change it
+  fake-ip-range: 198.18.0.1/16 # if you don't know what it is, don't change it
   fake-ip-filter: # fake ip white domain list
     - "*.lan"
     - localhost.ptlogin2.qq.com
@@ -81,7 +81,7 @@ dns:
     - "119.29.29.29:53" # DNSPod
     - "182.254.116.116:53" # Tencent
     - "182.254.118.118:53" # Tencent
-    - "180.76.76.76:53" # Baidu
+    #- "180.76.76.76:53" # Baidu
     #- "2400:da00::6666:53"  # Baidu
     - "117.50.10.10:53" # OneDNS
     - "52.80.52.52:53" # OneDNS
@@ -91,12 +91,7 @@ dns:
     #- "114.114.115.115:53"  # 114 DNS
     - "101.226.4.6:53" # DNS PAI
     - "218.30.118.6:53" # DNS PAI
-    - "https://i.233py.com/dns-query" # GeekDNS
-    #- "tls://223.5.5.5:853" # Alibaba
-    #- "tls://223.6.6.6:853" # Alibaba
   fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
-    #- "https://dns.alidns.com/dns-query"  # Alibaba
-    #- "https://doh.360.cn/dns-query"  # 360
     - "https://dns.google/dns-query" # Google
     #- "https://doh.opendns.com/dns-query"  # OpenDNS
     - "https://cloudflare-dns.com/dns-query" # Cloudflare
