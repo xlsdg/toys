@@ -65,8 +65,8 @@ dns:
     #- "199.85.127.10:53"  # Norton DNS
     #- "156.154.70.5:53"  # Neustar DNS
     #- "156.154.71.5:53"  # Neustar DNS
-    #- "9.9.9.9:53" # Quad9 DNS
-    #- "149.112.112.112:53" # Quad9 DNS
+    #- "9.9.9.11:53" # Quad9 DNS
+    #- "149.112.112.11:53" # Quad9 DNS
     #- "195.46.39.39:53"  # SafeDNS DNS
     #- "195.46.39.40:53"  # SafeDNS DNS
   enhanced-mode: redir-host # or fake-ip
