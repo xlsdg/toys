@@ -16,7 +16,7 @@ allow-lan: false
 # bind-address: "*"
 
 # Rule / Global / Direct (default is Rule)
-mode: Rule
+mode: Global
 
 # set log level to stdout (default is info)
 # info / warning / error / debug / silent
