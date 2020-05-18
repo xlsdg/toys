@@ -70,10 +70,10 @@ dns:
     #- "195.46.39.39:53"  # SafeDNS DNS
     #- "195.46.39.40:53"  # SafeDNS DNS
   enhanced-mode: redir-host # or fake-ip
-  fake-ip-range: 198.18.0.1/16 # if you don't know what it is, don't change it
-  fake-ip-filter: # fake ip white domain list
-    - "*.lan"
-    - localhost.ptlogin2.qq.com
+  # fake-ip-range: 198.18.0.1/16 # if you don't know what it is, don't change it
+  # fake-ip-filter: # fake ip white domain list
+  #   - "*.lan"
+  #   - localhost.ptlogin2.qq.com
   nameserver:
     - "223.5.5.5:53" # Alibaba
     - "223.6.6.6:53" # Alibaba
