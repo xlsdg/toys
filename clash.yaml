@@ -57,8 +57,8 @@ dns:
     - "8.8.4.4:53" # Google
     - "1.1.1.1:53" # Cloudflare
     - "1.0.0.1:53" # Cloudflare
-    - "208.67.222.222:53" # OpenDNS
-    - "208.67.220.220:53" # OpenDNS
+    # - "208.67.222.222:53" # OpenDNS
+    # - "208.67.220.220:53" # OpenDNS
     #- "8.26.56.26:53"  # NuSEC DNS
     #- "8.20.247.20:53"  # NuSEC DNS
     #- "199.85.126.10:53"  # Norton DNS
@@ -81,41 +81,45 @@ dns:
     - "119.29.29.29:53" # DNSPod
     - "182.254.116.116:53" # Tencent
     - "182.254.118.118:53" # Tencent
-    #- "180.76.76.76:53" # Baidu
-    #- "2400:da00::6666:53"  # Baidu
+    # - "180.76.76.76:53" # Baidu
+    # - "2400:da00::6666:53"  # Baidu
     - "117.50.10.10:53" # OneDNS
     - "52.80.52.52:53" # OneDNS
-    #- "1.2.4.8:53"  # CNNIC
-    #- "210.2.4.8:53"  # CNNIC
-    #- "114.114.114.114:53"  # 114 DNS
-    #- "114.114.115.115:53"  # 114 DNS
+    # - "1.2.4.8:53"  # CNNIC
+    # - "210.2.4.8:53"  # CNNIC
+    # - "114.114.114.114:53"  # 114 DNS
+    # - "114.114.115.115:53"  # 114 DNS
     - "101.226.4.6:53" # DNS PAI
     - "218.30.118.6:53" # DNS PAI
   fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
     - "https://dns.google/dns-query" # Google
-    #- "https://doh.opendns.com/dns-query"  # OpenDNS
+    # - "https://doh.opendns.com/dns-query"  # OpenDNS
     - "https://cloudflare-dns.com/dns-query" # Cloudflare
-    #- "https://dns.quad9.net/dns-query"  # Quad9
-    #- "https://doh.dns.sb/dns-query"  # DNS.SB
+    # - "https://dns.quad9.net/dns-query"  # Quad9
+    # - "https://doh.dns.sb/dns-query"  # DNS.SB
     - "https://dns.rubyfish.cn/dns-query" # RubyFish
     - "https://dns.233py.com/dns-query" # GeekDNS
-    #- "https://dns.adguard.com/dns-query"  # ADGuard
+    # - "https://dns.adguard.com/dns-query"  # ADGuard
     - "tls://8.8.8.8:853" # Google
     - "tls://8.8.4.4:853" # Google
-    #- "tls://208.67.222.222:853"  # OpenDNS
-    #- "tls://208.67.220.220:853"  # OpenDNS
+    # - "tls://208.67.222.222:853"  # OpenDNS
+    # - "tls://208.67.220.220:853"  # OpenDNS
     - "tls://1.1.1.1:853" # Cloudflare
     - "tls://1.0.0.1:853" # Cloudflare
-    #- "tls://9.9.9.9:853"  # Quad9
-    #- "tls://149.112.112.112:853"  # Quad9
-    #- "tls://185.222.222.222:853"  # DNS.SB
-    #- "tls://185.184.222.222:853"  # DNS.SB
+    # - "tls://9.9.9.9:853"  # Quad9
+    # - "tls://149.112.112.112:853"  # Quad9
+    # - "tls://185.222.222.222:853"  # DNS.SB
+    # - "tls://185.184.222.222:853"  # DNS.SB
     - "tls://ea-dns.rubyfish.cn:853" # RubyFish
     - "tls://uw-dns.rubyfish.cn:853" # RubyFish
-    #- "tls://hk-dns.233py.com:853"  # GeekDNS
-    #- "tls://us-dns.233py.com:853"  # GeekDNS
-    #- "tls://176.103.130.130:853"  # ADGuard
-    #- "tls://176.103.130.131:853"  # ADGuard
+    # - "tls://hk-dns.233py.com:853"  # GeekDNS
+    # - "tls://us-dns.233py.com:853"  # GeekDNS
+    # - "tls://176.103.130.130:853"  # ADGuard
+    # - "tls://176.103.130.131:853"  # ADGuard
+    # - "tcp://8.8.8.8:53" # Google
+    # - "tcp://8.8.4.4:53" # Google
+    # - "tcp://1.1.1.1:53" # Cloudflare
+    # - "tcp://1.0.0.1:53" # Cloudflare
   fallback-filter:
     geoip: true # default
     ipcidr: # ips in these subnets will be considered polluted
