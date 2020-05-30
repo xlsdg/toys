@@ -92,9 +92,9 @@ dns:
     # - "101.226.4.6:53" # DNS PAI
     # - "218.30.118.6:53" # DNS PAI
   fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
-    - "https://dns.google/dns-query" # Google
+    # - "https://dns.google/dns-query" # Google
     # - "https://doh.opendns.com/dns-query"  # OpenDNS
-    - "https://cloudflare-dns.com/dns-query" # Cloudflare
+    # - "https://cloudflare-dns.com/dns-query" # Cloudflare
     # - "https://dns.quad9.net/dns-query"  # Quad9
     # - "https://doh.dns.sb/dns-query"  # DNS.SB
     # - "https://dns.rubyfish.cn/dns-query" # RubyFish
