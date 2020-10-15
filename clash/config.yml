@@ -1,0 +1,261 @@
+# Port of HTTP(S) proxy server on the local end
+port: 1087
+
+# Port of SOCKS5 proxy server on the local end
+socks-port: 1086
+
+# Transparent proxy server port for Linux and macOS
+# redir-port: 1085
+
+# HTTP(S) and SOCKS5 server on the same port
+# mixed-port: 1084
+
+# authentication of local SOCKS5/HTTP(S) server
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
+
+# Set to true to allow connections to local-end server from
+# other LAN IP addresses
+allow-lan: false
+
+# This is only applicable when `allow-lan` is `true`
+# '*': bind all IP addresses
+# 192.168.122.11: bind a single IPv4 address
+# "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
+# bind-address: "*"
+
+# Clash router working mode
+# rule: rule-based packet routing
+# global: all packets will be forwarded to a single endpoint
+# direct: directly forward the packets to the Internet
+mode: Rule
+
+# Clash by default prints logs to STDOUT
+# info / warning / error / debug / silent
+log-level: silent
+
+# When set to false, resolver won't translate hostnames to IPv6 addresses
+ipv6: false
+
+# RESTful web API listening address
+external-controller: 127.0.0.1:1083
+
+# A relative path to the configuration directory or an absolute path to a
+# directory in which you put some static web resource. Clash core will then
+# serve it at `http://{{external-controller}}/ui`.
+# external-ui: folder
+
+# Secret for the RESTful API (optional)
+# Authenticate by spedifying HTTP header `Authorization: Bearer ${secret}`
+# ALWAYS set a secret if RESTful API is listening on 0.0.0.0
+# secret: ""
+
+# Outbound interface name
+# interface-name: en0
+
+# Static hosts for DNS server and connection establishment, only works
+# when `dns.enhanced-mode` is `redir-host`.
+#
+# Wildcard hostnames are supported (e.g. *.clash.dev, *.foo.*.example.com)
+# Non-wildcard domain names has a higher priority than wildcard domain names
+# e.g. foo.example.com > *.example.com > .example.com
+# P.S. +.foo.com equals to .foo.com and foo.com
+# hosts:
+#   '*.clash.dev': 127.0.0.1
+#   '.dev': 127.0.0.1
+#   'alpha.clash.dev': '::1'
+
+# DNS server settings
+# This section is optional. When not present, DNS server will be disabled.
+dns:
+  enable: true # set true to enable dns (default is false)
+  listen: 0.0.0.0:53
+  ipv6: false # when false, response to AAAA questions will be empty
+  # These nameservers are used to resolve the DNS nameserver hostnames below.
+  # Specify IP addresses only
+  default-nameserver: # resolve dns nameserver host, should fill pure IP
+    # - '8.8.8.8' # Google
+    # - '8.8.4.4' # Google
+    # - '1.1.1.1' # Cloudflare
+    # - '1.0.0.1' # Cloudflare
+    - "208.67.222.222:443" # OpenDNS
+    - "208.67.220.220:443" # OpenDNS
+    # - "8.26.56.26"  # NuSEC DNS
+    # - "8.20.247.20"  # NuSEC DNS
+    # - "199.85.126.10"  # Norton DNS
+    # - "199.85.127.10"  # Norton DNS
+    # - "156.154.70.5"  # Neustar DNS
+    # - "156.154.71.5"  # Neustar DNS
+    # - "9.9.9.11" # Quad9 DNS
+    # - "149.112.112.11" # Quad9 DNS
+    # - "195.46.39.39"  # SafeDNS DNS
+    # - "195.46.39.40"  # SafeDNS DNS
+  enhanced-mode: redir-host # or fake-ip
+  # fake-ip-range: 198.18.0.1/16 # if you don't know what it is, don't change it
+  # fake-ip-filter: # fake ip white domain list
+  #   - "*.lan"
+  #   - localhost.ptlogin2.qq.com
+  nameserver:
+    # - '182.254.116.116' # Tencent
+    # - '182.254.118.118' # Tencent
+    - "119.28.28.28" # DNSPod
+    - "119.29.29.29" # DNSPod
+    - "223.5.5.5" # Alibaba
+    - "223.6.6.6" # Alibaba
+    # - "180.76.76.76" # Baidu
+    # - "2400:da00::6666"  # Baidu
+    # - "117.50.10.10" # OneDNS
+    # - "52.80.52.52" # OneDNS
+    # - "1.2.4.8"  # CNNIC
+    # - "210.2.4.8"  # CNNIC
+    # - "114.114.114.114"  # 114 DNS
+    # - "114.114.115.115"  # 114 DNS
+    # - "101.226.4.6" # DNS PAI
+    # - "218.30.118.6" # DNS PAI
+  fallback: # concurrent request with nameserver, fallback used when GEOIP country isn't CN
+    # - "https://dns.google/dns-query" # Google
+    # - "https://doh.opendns.com/dns-query"  # OpenDNS
+    # - "https://cloudflare-dns.com/dns-query" # Cloudflare
+    # - "https://dns.quad9.net/dns-query"  # Quad9
+    # - "https://doh.dns.sb/dns-query"  # DNS.SB
+    # - "https://dns.rubyfish.cn/dns-query" # RubyFish
+    # - "https://dns.233py.com/dns-query" # GeekDNS
+    # - "https://dns.adguard.com/dns-query"  # ADGuard
+    # - 'tls://8.8.8.8' # Google
+    # - 'tls://8.8.4.4' # Google
+    # - "tls://208.67.222.222"  # OpenDNS
+    # - "tls://208.67.220.220"  # OpenDNS
+    # - 'tls://1.1.1.1' # Cloudflare
+    # - 'tls://1.0.0.1' # Cloudflare
+    # - "tls://9.9.9.9"  # Quad9
+    # - "tls://149.112.112.112"  # Quad9
+    # - "tls://185.222.222.222"  # DNS.SB
+    # - "tls://185.184.222.222"  # DNS.SB
+    # - "tls://ea-dns.rubyfish.cn" # RubyFish
+    # - "tls://uw-dns.rubyfish.cn" # RubyFish
+    # - "tls://hk-dns.233py.com"  # GeekDNS
+    # - "tls://us-dns.233py.com"  # GeekDNS
+    # - "tls://176.103.130.130"  # ADGuard
+    # - "tls://176.103.130.131"  # ADGuard
+    - "tcp://8.8.8.8" # Google
+    - "tcp://8.8.4.4" # Google
+    - "tcp://1.1.1.1" # Cloudflare
+    - "tcp://1.0.0.1" # Cloudflare
+    # - 'tcp://208.67.222.222:443' # Cloudflare
+    # - 'tcp://208.67.220.220:443' # Cloudflare
+  fallback-filter:
+    geoip: true # default
+    ipcidr: # ips in these subnets will be considered polluted
+      - 240.0.0.0/4
+
+proxies:
+  - name: "ss"
+    type: ss
+    server: server
+    port: 443
+    cipher: xchacha20-ietf-poly1305
+    password: "password"
+
+proxy-groups:
+  # relay chains the proxies. proxies shall not contain a proxy-group. No UDP support.
+  # Traffic: clash <-> http <-> vmess <-> ss1 <-> ss2 <-> Internet
+  - name: relay
+    type: relay
+    proxies:
+      - ss
+
+  # url-test select which proxy will be used by benchmarking speed to a URL.
+  - name: url-test
+    type: url-test
+    proxies:
+      - ss
+    url: "http://cp.cloudflare.com/generate_204"
+    interval: 300
+
+  # fallback select an available policy by priority. The availability is tested by accessing an URL, just like an auto url-test group.
+  - name: fallback
+    type: fallback
+    proxies:
+      - ss
+    url: "http://cp.cloudflare.com/generate_204"
+    interval: 300
+
+  # load-balance: The request of the same eTLD will be dial on the same proxy.
+  - name: load-balance
+    type: load-balance
+    proxies:
+      - ss
+    url: "http://cp.cloudflare.com/generate_204"
+    interval: 300
+
+  # select is used for selecting proxy or proxy group
+  # you can use RESTful API to switch proxy, is recommended for use in GUI.
+  - name: user-select
+    type: select
+    proxies:
+      - url-test
+      - fallback
+      - load-balance
+
+rules:
+  - DOMAIN-KEYWORD,-cn,DIRECT
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-SUFFIX,xn--fiqs8s,DIRECT
+  # - DOMAIN-SUFFIX,ac.cn,DIRECT
+  # - DOMAIN-SUFFIX,com.cn,DIRECT
+  # - DOMAIN-SUFFIX,edu.cn,DIRECT
+  # - DOMAIN-SUFFIX,gov.cn,DIRECT
+  # - DOMAIN-SUFFIX,mil.cn,DIRECT
+  # - DOMAIN-SUFFIX,net.cn,DIRECT
+  # - DOMAIN-SUFFIX,org.cn,DIRECT
+  # - DOMAIN-SUFFIX,ah.cn,DIRECT
+  # - DOMAIN-SUFFIX,bj.cn,DIRECT
+  # - DOMAIN-SUFFIX,cq.cn,DIRECT
+  # - DOMAIN-SUFFIX,fj.cn,DIRECT
+  # - DOMAIN-SUFFIX,gd.cn,DIRECT
+  # - DOMAIN-SUFFIX,gs.cn,DIRECT
+  # - DOMAIN-SUFFIX,gz.cn,DIRECT
+  # - DOMAIN-SUFFIX,gx.cn,DIRECT
+  # - DOMAIN-SUFFIX,ha.cn,DIRECT
+  # - DOMAIN-SUFFIX,hb.cn,DIRECT
+  # - DOMAIN-SUFFIX,he.cn,DIRECT
+  # - DOMAIN-SUFFIX,hi.cn,DIRECT
+  # - DOMAIN-SUFFIX,hl.cn,DIRECT
+  # - DOMAIN-SUFFIX,hk.cn,DIRECT
+  # - DOMAIN-SUFFIX,hn.cn,DIRECT
+  # - DOMAIN-SUFFIX,jl.cn,DIRECT
+  # - DOMAIN-SUFFIX,js.cn,DIRECT
+  # - DOMAIN-SUFFIX,jx.cn,DIRECT
+  # - DOMAIN-SUFFIX,ln.cn,DIRECT
+  # - DOMAIN-SUFFIX,mo.cn,DIRECT
+  # - DOMAIN-SUFFIX,nm.cn,DIRECT
+  # - DOMAIN-SUFFIX,nx.cn,DIRECT
+  # - DOMAIN-SUFFIX,qh.cn,DIRECT
+  # - DOMAIN-SUFFIX,sc.cn,DIRECT
+  # - DOMAIN-SUFFIX,sd.cn,DIRECT
+  # - DOMAIN-SUFFIX,sh.cn,DIRECT
+  # - DOMAIN-SUFFIX,sn.cn,DIRECT
+  # - DOMAIN-SUFFIX,sx.cn,DIRECT
+  # - DOMAIN-SUFFIX,tj.cn,DIRECT
+  # - DOMAIN-SUFFIX,tw.cn,DIRECT
+  # - DOMAIN-SUFFIX,xj.cn,DIRECT
+  # - DOMAIN-SUFFIX,xz.cn,DIRECT
+  # - DOMAIN-SUFFIX,yn.cn,DIRECT
+  # - DOMAIN-SUFFIX,zj.cn,DIRECT
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,localhost,DIRECT
+  # - DOMAIN-SUFFIX,ip6-localhost,DIRECT
+  # - DOMAIN-SUFFIX,ip6-loopback,DIRECT
+  # - IP-CIDR,0.0.0.0/8,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  # - IP-CIDR,192.0.0.0/24,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  # - IP-CIDR,198.18.0.0/15,DIRECT
+  # - IP-CIDR6,::/128,DIRECT
+  # - IP-CIDR6,::1/128,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,user-select
