@@ -3,8 +3,6 @@
 ; Author: xLsDg
 ; Usage: https://github.com/FelisCatus/SwitchyOmega/wiki/RuleListUsage
 
-; {ips}
-
 *.cn
 *.0-100.com
 *.0-6.com
