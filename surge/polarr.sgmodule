@@ -2,7 +2,7 @@
 #!desc=Polarr 泼辣修图解锁特权（需恢复购买）
 
 [Script]
-http-response ^https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts\/confirmation requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/NobyDa/Script@master/Surge/JS/Polarr.js
+http-response ^https:\/\/api\.polaxiong\.com\/v1\/payments\/appleiap\/receipts\/confirmation requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Polarr.js
 
 [MITM]
-hostname=api.polaxiong.com
+hostname = api.polaxiong.com
