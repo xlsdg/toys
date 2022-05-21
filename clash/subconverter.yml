@@ -1,5 +1,5 @@
-rulesets:
-  enabled: true
+custom:
+  enable_rule_generator: true
   overwrite_original_rules: true
   rulesets:
     - {ruleset: "quanx:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list", group: "DIRECT", interval: 172800}
