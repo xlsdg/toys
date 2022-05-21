@@ -1,0 +1,3 @@
+common:
+  surge_rule_base: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf
+  quanx_rule_base: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf
