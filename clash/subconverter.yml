@@ -10,3 +10,5 @@ custom:
     - {ruleset: "quanx:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list", group: "user-select", interval: 172800}
     - {ruleset: "quanx:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list", group: "user-select", interval: 172800}
     - {ruleset: "quanx:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list", group: "DIRECT", interval: 172800}
+  # surge_rule_base: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Outbound.conf
+  quanx_rule_base: https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Outbound.conf
