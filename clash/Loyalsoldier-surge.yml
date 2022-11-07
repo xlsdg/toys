@@ -1,0 +1,16 @@
+custom:
+  enable_rule_generator: true
+  overwrite_original_rules: true
+  rulesets:
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/private.txt", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/reject.txt", group: "REJECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/icloud.txt", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/apple.txt", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/google.txt", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/proxy.txt", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/direct.txt", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/telegramcidr.txt", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/cncidr.txt", group: "DIRECT"}
+    # - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/gfw.txt", group: "user-select"}
+    # - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/greatfire.txt", group: "user-select"}
+    # - {ruleset: "surge:https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/tld-not-cn.txt", group: "user-select"}

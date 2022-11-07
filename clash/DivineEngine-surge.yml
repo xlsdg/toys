@@ -1,0 +1,19 @@
+custom:
+  enable_rule_generator: true
+  overwrite_original_rules: true
+  rulesets:
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list", group: "REJECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/AdvertisingPlus.list", group: "REJECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Privacy.list", group: "REJECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Hijacking.list", group: "REJECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Video/DisneyPlus.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Video/Netflix.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Video/YouTube.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Music/Spotify.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Streaming.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/StreamingSE.list", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Telegram/Telegram.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Global.list", group: "user-select"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Apple/Apple.list", group: "DIRECT"}
+    - {ruleset: "surge:https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/China.list", group: "DIRECT"}
