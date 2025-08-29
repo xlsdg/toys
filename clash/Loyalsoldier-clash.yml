@@ -3,10 +3,10 @@ custom:
   overwrite_original_rules: true
   rulesets:
     - {ruleset: "clash-classic:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/applications.txt", group: "DIRECT"}
-    - {ruleset: "[]DOMAIN,clash.razord.top", group: "DIRECT"}
-    - {ruleset: "[]DOMAIN,yacd.haishan.me", group: "DIRECT"}
+    # - {ruleset: "[]DOMAIN,clash.razord.top", group: "DIRECT"}
+    # - {ruleset: "[]DOMAIN,yacd.haishan.me", group: "DIRECT"}
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/private.txt", group: "DIRECT"}
-    - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt", group: "REJECT"}
+    # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt", group: "REJECT"}
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt", group: "DIRECT"}
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt", group: "DIRECT"}
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt", group: "user-select"}
@@ -18,6 +18,6 @@ custom:
     # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt", group: "user-select"}
     # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt", group: "user-select"}
     # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt", group: "user-select"}
-    # - {ruleset: "[]GEOIP,LAN", group: "DIRECT"}
+    # - {ruleset: "[]GEOIP,PRIVATE", group: "DIRECT"}
     - {ruleset: "[]GEOIP,CN", group: "DIRECT"}
     - {ruleset: "[]MATCH", group: "user-select"}
