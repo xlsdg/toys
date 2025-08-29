@@ -12,9 +12,9 @@ custom:
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt", group: "user-select"}
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt", group: "user-select"}
     - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt", group: "DIRECT"}
-    - {ruleset: "clash-ipcidr:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt,no-resolve", group: "DIRECT"}
-    - {ruleset: "clash-ipcidr:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt,no-resolve", group: "DIRECT"}
-    - {ruleset: "clash-ipcidr:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt,no-resolve", group: "user-select"}
+    - {ruleset: "clash-ipcidr:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt", group: "DIRECT"}
+    - {ruleset: "clash-ipcidr:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt", group: "DIRECT"}
+    - {ruleset: "clash-ipcidr:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt", group: "user-select"}
     # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/gfw.txt", group: "user-select"}
     # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/greatfire.txt", group: "user-select"}
     # - {ruleset: "clash-domain:https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/tld-not-cn.txt", group: "user-select"}
